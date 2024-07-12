@@ -1,0 +1,25 @@
+{
+  "name": "javascript-this-exercises",
+  "version": "0.0.1",
+  "description": "🔍 Una colección de ejercicios prácticos para dominar la palabra clave `this` en JavaScript. 🚀 ¡Perfecto para aprender y practicar los diferentes contextos de `this`! 📚",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [
+    "javascript",
+    "this",
+    "contexto",
+    "ejercicios",
+    "práctica",
+    "programación",
+    "aprendizaje",
+    "tutorial"
+  ],
+  "author": "Yangua Ruiz Samir",
+  "license": "MIT",
+  "dependencies": {
+    "highlight.js": "^11.10.0"
+  },
+  "type": "module"
+}

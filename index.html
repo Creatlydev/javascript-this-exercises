@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explora y practica `this` en JavaScript con estos ejercicios prácticos y sus soluciones detalladas. Perfecto para estudiantes que buscan entender mejor el comportamiento de `this` en diferentes contextos. Intenta resolver cada ejercicio y despliega la respuesta para aprender más.">
+    <title>Ejercicios de this en JavaScript</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/atom-one-dark.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a rel="noreferrer noopener" target="_blank" href="https://github.com/Creatlydev/javascript-this-exercises" class="btn-github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="Currentcolor">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z">
+                </path>
+            </svg>
+            <span>Github</span>
+        </a>
+    </header>
+
+    <main class="main-page">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">
+                    Practicando <code>this</code> en <span>JavaScript</span> Ejercicios y Soluciones
+                </h1>
+
+                <div class="hero__description">
+                    <p>
+                        Bienvenido a mi página de ejercicios sobre this en JavaScript. Mientras aprendía sobre este
+                        concepto,
+                        creé estos ejemplos prácticos para ayudarme a entender mejor cómo funciona this en diferentes
+                        situaciones.
+                    </p>
+
+                    <p>
+                        Aquí encontrarás cada ejercicio con su solución y una explicación clara, ideal para
+                        quienes, como yo, están aprendiendo y quieren reforzar sus conocimientos. Intenta resolver cada
+                        ejercicio por tu cuenta y luego despliega la respuesta para ver la solución y la explicación
+                        detallada.
+                        Espero que estos ejercicios te sean tan útiles como lo han sido para mí.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="exercises">
+            <div class="container" id="exercises-container">
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>Hecho con ❤️ por <a rel="noreferrer noopener" class="link"
+                href="https://github.com/Creatlydev?tab=overview&from=2024-06-01&to=2024-06-30">Samir</a></p>
+    </footer>
+
+    <!-- Plantilla para los ejercicios -->
+    <template id="exercise-template">
+        <details class="exercise">
+            <summary>
+                <h2 class="exercise__title">
+                    <pre class="exercise__code"><code>
+                        <button class="exercise__btn-copy">copy</button>
+                    </code></pre>
+                </h2>
+            </summary>
+            <p class="exercise__answer"></p>
+            <p class="exercise__explanation"></p>
+        </details>
+    </template>
+
+    <!-- Scripts -->
+    <script type="module" src="./src/main.js"></script>
+
+</body>
+
+</html>
