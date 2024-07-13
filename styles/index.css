@@ -14,10 +14,10 @@ ul, li {
 
 @media (prefers-color-scheme: light) {
     :root {
-        --text: hsl(150, 2%, 22%);
+        --text: hsl(150, 2%, 15%);
         --text-light: hsl(150, 2%, 30%);
         --background: hsl(228, 56%, 93%);
-        --primary: hsl(62, 85%, 42%);
+        --primary: hsl(62, 85%, 45%);
         --accent: hsl(20, 84%, 48%);
     }
 }
@@ -44,7 +44,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
 }
 
@@ -122,9 +122,9 @@ button {
 .exercise__btn-copy {
     position: absolute;
     content: '';
-    background-color: var(--background);
+    background-color: hsl(203, 32%, 10%);
     border: none;
-    padding: .2rem .65rem;
+    padding: .35rem .7rem;
     font-size: .75rem;
     right: 10px;
     top: 10px;
@@ -137,6 +137,7 @@ button {
 }
 
 pre>code {
+    color: #ccc;
     font-weight: normal;
     display: block;
     padding: 1.25rem;
@@ -166,7 +167,7 @@ pre>code {
 
 
 .link {
-    color: var(--primary);
+    color: var(--accent);
     text-decoration: 1px underline wavy;
 }
 
