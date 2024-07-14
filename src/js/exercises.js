@@ -173,6 +173,43 @@ boundGreet();`,
 console.log(multiplier.multiply(5));`,
             { language: 'javascript' }
     ).value
+  },
+  {
+    title: '11. ¿Cuál es la salida del siguiente código? (Nivel Avanzado)',
+    answer: 'La salida de este código será: 15 y NaN',
+    explanation: 'En este código, `calculator` es un objeto con dos métodos: `add` y `multiply`. Cuando llamamos a `calculator.add(5)`, `this.base` se refiere al objeto `calculator`, por lo que el resultado es `5 + 10 = 15`. Sin embargo, cuando llamamos a `calculator.multiply(5)`, `innerMultiply` es una función regular, y su `this` no se refiere al objeto `calculator`, sino al objeto global. Esto significa que `this.base` es `undefined` en el contexto de `innerMultiply`. Como resultado, `num2 * this.base` se convierte en `5 * undefined`, lo cual resulta en `NaN` (Not-a-Number). La confusión puede venir de esperar que `this` se refiera a `calculator` dentro de `innerMultiply`, pero como `innerMultiply` es una función regular, pierde el contexto de `this`.',
+    code: hljs.highlight(
+        `const calculator = {
+  base: 10,
+  add: function (num) {
+      return num + this.base;
+  },
+  multiply: function (num) {
+      const innerMultiply = function (num2) {
+          return num2 * this.base;
+      };
+      return innerMultiply(num);
   }
-
+};
+console.log(calculator.add(5)); // 15
+console.log(calculator.multiply(5)); // NaN`,
+        { language: 'javascript' }
+    ).value
+  },
+  {
+    title: '12. ¿Cuál es la salida del siguiente código? (Nivel Avanzado)',
+    answer: 'La salida de este código será: NaN NaN NaN ...',
+    explanation: 'En este código, `Counter` es una función constructora que inicializa `this.count` a `0` y luego configura un `setInterval` para incrementar `count` y mostrar su valor en la consola cada segundo. Sin embargo, dentro de la función regular de `setInterval`, `this` no se refiere al objeto `Counter`, sino al objeto global. Como resultado, `this.count` es `undefined` en ese contexto, y cuando intenta incrementar `undefined`, el resultado es `NaN`. Para mantener el contexto de `this`, podrías usar una función de flecha o almacenar `this` en una variable que esté disponible dentro de la función de `setInterval`.',
+    code: hljs.highlight(
+        `function Counter() {
+  this.count = 0;
+  setInterval(function () {
+      this.count++;
+      console.log(this.count);
+  }, 1000);
+}
+const counter = new Counter();`,
+        { language: 'javascript' }
+    ).value
+  }
 ]
