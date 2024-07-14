@@ -21,5 +21,11 @@
   "dependencies": {
     "highlight.js": "^11.10.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
 }
