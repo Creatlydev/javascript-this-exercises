@@ -1,6 +1,7 @@
 import exercises from './js/exercises.js'
 import './js/copyEvents.js'
 import './js/backToTop.js'
+import './js/themeToggle.js'
 
 function createExercise (exerciseObject) {
   const exerciseTemplate = document.getElementById('exercise-template').content.cloneNode(true)

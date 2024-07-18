@@ -19,7 +19,7 @@ button {
 }
 
 /* Color Variables */
-:root {
+body.light-theme {
     --text: hsl(150, 2%, 15%);
     --text-light: hsl(150, 2%, 30%);
     --background: hsl(228, 56%, 93%);
@@ -30,30 +30,15 @@ button {
     --scroll-thumb-hover: hsl(203, 32%, 45%);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --text: hsl(150, 2%, 15%);
-        --text-light: hsl(150, 2%, 30%);
-        --background: hsl(228, 56%, 93%);
-        --primary: hsl(62, 85%, 45%);
-        --accent: hsl(20, 84%, 48%);
-        --scroll-bg: hsl(203, 32%, 80%);
-        --scroll-thumb: hsl(203, 32%, 60%);
-        --scroll-thumb-hover: hsl(203, 32%, 45%);
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text: hsl(150, 2%, 78%);
-        --text-light: hsl(150, 2%, 70%);
-        --background: hsl(203, 32%, 10%);
-        --primary: hsl(62, 85%, 58%);
-        --accent: hsl(20, 84%, 52%);
-        --scroll-bg: hsl(203, 32%, 20%);
-        --scroll-thumb: hsl(203, 32%, 35%);
-        --scroll-thumb-hover: hsl(203, 32%, 45%);
-    }
+body.dark-theme {
+    --text: hsl(150, 2%, 78%);
+    --text-light: hsl(150, 2%, 70%);
+    --background: hsl(203, 32%, 10%);
+    --primary: hsl(62, 85%, 58%);
+    --accent: hsl(20, 84%, 52%);
+    --scroll-bg: hsl(203, 32%, 20%);
+    --scroll-thumb: hsl(203, 32%, 35%);
+    --scroll-thumb-hover: hsl(203, 32%, 45%);
 }
 
 
