@@ -1,3 +1,4 @@
+/* Global Reset and Inheritance */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +8,17 @@
     text-decoration: none;
 }
 
+/* Remove list styles */
 ul,
 li {
     list-style: none;
 }
 
+button {
+    border: none;
+}
+
+/* Color Variables */
 :root {
     --text: hsl(150, 2%, 15%);
     --text-light: hsl(150, 2%, 30%);
@@ -22,7 +29,6 @@ li {
     --scroll-thumb: hsl(203, 32%, 60%);
     --scroll-thumb-hover: hsl(203, 32%, 45%);
 }
-
 
 @media (prefers-color-scheme: light) {
     :root {
@@ -50,9 +56,29 @@ li {
     }
 }
 
+
+/* Layout Containers */
+.container {
+    width: min(100%, 1280px);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+/* Global Body Styling */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    scrollbar-width: thin;
+    /* Firefox scrollbar width */
+}
+
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 14px;
-    height: 14px;
+    height: 0;
     background-color: var(--scroll-bg);
 }
 
@@ -66,61 +92,32 @@ li {
     background-color: var(--scroll-thumb-hover);
 }
 
-
-/* OBJECTS */
-.container {
-    width: min(100%, 1280px);
-    margin-inline: auto;
-    padding-inline: 1.5rem;
-}
-
-body {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    scrollbar-width: thin;
-}
-
-pre {
-    position: relative;
-    margin-block: 1rem;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    line-height: 1;
-    cursor: pointer;
-}
-
-
+/* Back to Top Button */
 .btn-up {
     position: fixed;
     bottom: 20px;
     right: 20px;
     color: #fff;
     background-color: var(--accent);
-    border-radius: 50%;
     width: 50px;
     height: 50px;
     box-shadow: 0 4px 16px rgb(0 0 0 / 0.2);
     z-index: 1000;
     display: grid;
     place-content: center;
-    transition: transform 300ms, opacity 400ms;
     opacity: 0;
     transform: scale(0);
+    border-radius: 50%;
+    transition: transform 300ms, opacity 400ms;
+}
 
-    >svg {
-        transition: transform 300ms;
-        transform: translateY(2px);
-    }
+.btn-up svg {
+    transition: transform 300ms;
+    transform: translateY(2px);
+}
 
-    &:hover>svg {
-        transform: translateY(0);
-    }
+.btn-up:hover svg {
+    transform: translateY(0);
 }
 
 .btn-up.show {
@@ -128,8 +125,7 @@ button {
     transform: scale(1);
 }
 
-
-/* HEADER */
+/* Header Styling */
 .header {
     height: 4rem;
     background-color: var(--background);
@@ -141,68 +137,69 @@ button {
 .btn-github {
     display: flex;
     align-items: center;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
     gap: .5rem;
     font-weight: 400;
-
-    &:hover {
-        border: 1px solid currentColor;
-    }
 }
 
+.btn-github:hover {
+    border: 1px solid currentColor;
+}
 
-/* HERO */
+/* Hero Section */
 .hero {
     min-height: calc(100vh - 4rem);
     display: grid;
     place-content: center;
     text-align: center;
-    text-wrap: balance;
     background: url('../public/hero-image.webp') no-repeat center/cover var(--background);
     background-blend-mode: overlay;
     background-attachment: fixed;
     margin-bottom: 4rem;
-
-    .hero__title {
-        font-weight: 600;
-        font-size: 2.5rem;
-        font-size: clamp(1.5rem, 5vw, 3rem);
-        line-height: 1.2;
-        margin-bottom: 2.5rem;
-
-        span {
-            color: var(--primary);
-        }
-    }
-
-    .hero__description {
-        color: var(--text-light);
-        font-size: clamp(.875rem, 3vw, 1rem);
-    }
-
-    .hero__description>p+p {
-        margin-top: 1rem;
-    }
+    text-wrap: balance;
+    /* CSS property for balancing text */
 }
 
+.hero__title {
+    font-weight: 600;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+}
 
+.hero__title span {
+    color: var(--primary);
+}
+
+.hero__description {
+    color: var(--text-light);
+    font-size: clamp(.875rem, 3vw, 1rem);
+}
+
+.hero__description p+p {
+    margin-top: 1rem;
+}
+
+/* Exercise Copy Button */
 .exercise__btn-copy {
     position: absolute;
-    content: '';
     background-color: hsl(203, 32%, 10%);
-    border: none;
     padding: .35rem .7rem;
     font-size: .75rem;
     right: 10px;
     top: 10px;
-    border-radius: .5rem;
     cursor: pointer;
+    border-radius: .5rem;
     transition: transform 300ms;
+}
 
-    &:active {
-        transform: scale(.95);
-    }
+.exercise__btn-copy:active {
+    transform: scale(.95);
+}
+
+/* Code Block Styling */
+pre {
+    position: relative;
+    margin-block: 1rem;
 }
 
 pre>code {
@@ -217,6 +214,7 @@ pre>code {
     overflow-x: auto;
 }
 
+/* Exercise Spacing */
 .exercise+.exercise {
     margin-top: 2.5rem;
 }
@@ -233,14 +231,13 @@ pre>code {
     cursor: pointer;
 }
 
-
-
+/* Link Styling */
 .link {
     color: var(--accent);
-    text-decoration: 1px underline wavy;
+    text-decoration: underline wavy;
 }
 
-/* FOOTER */
+/* Footer Styling */
 .page-footer {
     margin-top: 5rem;
     position: relative;
@@ -249,17 +246,14 @@ pre>code {
     place-items: center;
     padding-block: 1.5rem 2.5rem;
     font-size: .875rem;
+}
 
-    &::before {
-        content: '';
-        top: 0;
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        opacity: .6;
-        background: linear-gradient(to left,
-                transparent 10%,
-                var(--primary) 50%,
-                transparent 90%);
-    }
+.page-footer::before {
+    content: '';
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    opacity: .6;
+    background: linear-gradient(to left, transparent 10%, var(--primary) 50%, transparent 90%);
 }
