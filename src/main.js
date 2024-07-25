@@ -3,7 +3,7 @@ import './js/copyEvents.js'
 import './js/backToTop.js'
 import './js/themeToggle.js'
 
-function createExercise (exerciseObject) {
+function createExercise (exerciseObject, index) {
   const exerciseTemplate = document.getElementById('exercise-template').content.cloneNode(true)
 
   const details = exerciseTemplate.querySelector('.exercise')
@@ -14,7 +14,7 @@ function createExercise (exerciseObject) {
   const answer = exerciseTemplate.querySelector('.exercise__answer')
   const explanation = exerciseTemplate.querySelector('.exercise__explanation')
 
-  title.innerHTML = exerciseObject.title
+  title.innerHTML = `${index}. ${exerciseObject.title}`
   code.innerHTML = exerciseObject.code
   code.appendChild(button)
   title.appendChild(pre)
@@ -26,6 +26,6 @@ function createExercise (exerciseObject) {
 
 const exercisesContainer = document.getElementById('exercises-container')
 
-exercises.forEach((exercise) => {
-  createExercise(exercise)
+exercises.forEach((exercise, index) => {
+  createExercise(exercise, (index + 1).toString().padStart(2, 0))
 })

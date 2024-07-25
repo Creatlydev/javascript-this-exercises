@@ -5,5 +5,5 @@ const prefersDarkScheme =
 if (prefersDarkScheme) {
   body.classList.add('dark-theme')
 } else {
-  body.classList.add('light-theme')
+  body.classList.add('dark-theme')
 }
