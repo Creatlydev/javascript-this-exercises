@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*'
 const KEYWORDS = [
   'as', // for exports

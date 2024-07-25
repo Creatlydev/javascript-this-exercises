@@ -33,8 +33,8 @@ function deepFreeze (obj) {
   return obj
 }
 
-/** @typedef {import('highlight.js').CallbackResponse} CallbackResponse */
-/** @typedef {import('highlight.js').CompiledMode} CompiledMode */
+/** @typedef {('highlight.js').CallbackResponse} CallbackResponse */
+/** @typedef {('highlight.js').CompiledMode} CompiledMode */
 /** @implements CallbackResponse */
 
 class Response {
@@ -200,7 +200,7 @@ class HTMLRenderer {
 
 /** @typedef {{scope?: string, language?: string, children: Node[]} | string} Node */
 /** @typedef {{scope?: string, language?: string, children: Node[]} } DataNode */
-/** @typedef {import('highlight.js').Emitter} Emitter */
+/** @typedef {('highlight.js').Emitter} Emitter */
 /**  */
 
 /** @returns {DataNode} */
@@ -254,7 +254,7 @@ class TokenTree {
   }
 
   /**
-   * @typedef { import("./html_renderer").Renderer } Renderer
+   * @typedef { ("./html_renderer").Renderer } Renderer
    * @param {Renderer} builder
    */
   walk (builder) {
@@ -517,8 +517,8 @@ function _rewriteBackreferences (regexps, { joinWith }) {
   }).map(re => `(${re})`).join(joinWith)
 }
 
-/** @typedef {import('highlight.js').Mode} Mode */
-/** @typedef {import('highlight.js').ModeCallback} ModeCallback */
+/** @typedef {('highlight.js').Mode} Mode */
+/** @typedef {('highlight.js').ModeCallback} ModeCallback */
 
 // Common regexps
 const MATCH_NOTHING_RE = /\b\B/
@@ -741,8 +741,8 @@ const MODES = /* #__PURE__ */Object.freeze({
 })
 
 /**
-@typedef {import('highlight.js').CallbackResponse} CallbackResponse
-@typedef {import('highlight.js').CompilerExt} CompilerExt
+@typedef {('highlight.js').CallbackResponse} CallbackResponse
+@typedef {('highlight.js').CompilerExt} CompilerExt
 */
 
 // Grammar extensions / plugins
@@ -891,7 +891,7 @@ const DEFAULT_KEYWORD_SCOPE = 'keyword'
  * @param {boolean} caseInsensitive
  */
 function compileKeywords (rawKeywords, caseInsensitive, scopeName = DEFAULT_KEYWORD_SCOPE) {
-  /** @type {import("highlight.js/private").KeywordDict} */
+  /** @type {("highlight.js/private").KeywordDict} */
   const compiledKeywords = Object.create(null)
 
   // input can be a string of keywords, an array of keywords, or a object with
@@ -999,7 +999,7 @@ const deprecated = (version, message) => {
 /* eslint-disable no-throw-literal */
 
 /**
-@typedef {import('highlight.js').CompiledMode} CompiledMode
+@typedef {('highlight.js').CompiledMode} CompiledMode
 */
 
 const MultiClassError = new Error()
@@ -1128,11 +1128,11 @@ function MultiClass (mode) {
 }
 
 /**
-@typedef {import('highlight.js').Mode} Mode
-@typedef {import('highlight.js').CompiledMode} CompiledMode
-@typedef {import('highlight.js').Language} Language
-@typedef {import('highlight.js').HLJSPlugin} HLJSPlugin
-@typedef {import('highlight.js').CompiledLanguage} CompiledLanguage
+@typedef {('highlight.js').Mode} Mode
+@typedef {('highlight.js').CompiledMode} CompiledMode
+@typedef {('highlight.js').Language} Language
+@typedef {('highlight.js').HLJSPlugin} HLJSPlugin
+@typedef {('highlight.js').CompiledLanguage} CompiledLanguage
 */
 
 // compilation
@@ -1566,24 +1566,24 @@ https://highlightjs.org/
 */
 
 /**
-@typedef {import('highlight.js').Mode} Mode
-@typedef {import('highlight.js').CompiledMode} CompiledMode
-@typedef {import('highlight.js').CompiledScope} CompiledScope
-@typedef {import('highlight.js').Language} Language
-@typedef {import('highlight.js').HLJSApi} HLJSApi
-@typedef {import('highlight.js').HLJSPlugin} HLJSPlugin
-@typedef {import('highlight.js').PluginEvent} PluginEvent
-@typedef {import('highlight.js').HLJSOptions} HLJSOptions
-@typedef {import('highlight.js').LanguageFn} LanguageFn
-@typedef {import('highlight.js').HighlightedHTMLElement} HighlightedHTMLElement
-@typedef {import('highlight.js').BeforeHighlightContext} BeforeHighlightContext
-@typedef {import('highlight.js/private').MatchType} MatchType
-@typedef {import('highlight.js/private').KeywordData} KeywordData
-@typedef {import('highlight.js/private').EnhancedMatch} EnhancedMatch
-@typedef {import('highlight.js/private').AnnotatedError} AnnotatedError
-@typedef {import('highlight.js').AutoHighlightResult} AutoHighlightResult
-@typedef {import('highlight.js').HighlightOptions} HighlightOptions
-@typedef {import('highlight.js').HighlightResult} HighlightResult
+@typedef {('highlight.js').Mode} Mode
+@typedef {('highlight.js').CompiledMode} CompiledMode
+@typedef {('highlight.js').CompiledScope} CompiledScope
+@typedef {('highlight.js').Language} Language
+@typedef {('highlight.js').HLJSApi} HLJSApi
+@typedef {('highlight.js').HLJSPlugin} HLJSPlugin
+@typedef {('highlight.js').PluginEvent} PluginEvent
+@typedef {('highlight.js').HLJSOptions} HLJSOptions
+@typedef {('highlight.js').LanguageFn} LanguageFn
+@typedef {('highlight.js').HighlightedHTMLElement} HighlightedHTMLElement
+@typedef {('highlight.js').BeforeHighlightContext} BeforeHighlightContext
+@typedef {('highlight.js/private').MatchType} MatchType
+@typedef {('highlight.js/private').KeywordData} KeywordData
+@typedef {('highlight.js/private').EnhancedMatch} EnhancedMatch
+@typedef {('highlight.js/private').AnnotatedError} AnnotatedError
+@typedef {('highlight.js').AutoHighlightResult} AutoHighlightResult
+@typedef {('highlight.js').HighlightOptions} HighlightOptions
+@typedef {('highlight.js').HighlightResult} HighlightResult
 */
 
 const escape = escapeHTML

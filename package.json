@@ -18,9 +18,6 @@
   ],
   "author": "Yangua Ruiz Samir",
   "license": "MIT",
-  "dependencies": {
-    "highlight.js": "^11.10.0"
-  },
   "type": "module",
   "devDependencies": {
     "standard": "^17.1.0"

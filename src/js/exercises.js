@@ -69,24 +69,6 @@ person.greet();`,
     ).value
   },
   {
-    title: ' ¿Cuál es la salida del siguiente código? (Nivel Avanzado)',
-    answer: 'La salida de este código será: Dave',
-    explanation: 'Aquí, `innerGreet` es una función regular, pero estamos usando `.bind(this)` para asegurar que `this` dentro de `innerGreet` sea el mismo `this` que en `greet`, que es `person`. Esto hace que `this.name` sea "Dave". Sin `.bind(this)`, `this` dentro de `innerGreet` sería `undefined` porque se refiere al objeto global. Este truco es muy útil para mantener el `this` correcto en funciones internas.',
-    code: hljs.highlight(
-            `const person = {
-    name: "Dave",
-    greet: function () {
-        const innerGreet = function () {
-            console.log(this.name);
-        }.bind(this);
-        innerGreet();
-    }
-};
-person.greet();`,
-            { language: 'javascript' }
-    ).value
-  },
-  {
     title: ' ¿Cuál es la salida del siguiente código? (Nivel Intermedio)',
     answer: 'La salida de este código será: undefined',
     explanation: 'La función pasada a `setTimeout` es una función regular, por lo que `this` dentro de ella no se refiere a `person`, sino al objeto global. Como `name` no es una propiedad del objeto global, `this.name` es `undefined`. Muchos se confunden esperando que `this` apunte a `person`, pero `setTimeout` ejecuta su función en un contexto diferente, cambiando `this` al global.',
@@ -165,6 +147,24 @@ person.greet();`,
   },
   {
     title: ' ¿Cuál es la salida del siguiente código? (Nivel Avanzado)',
+    answer: 'La salida de este código será: Dave',
+    explanation: 'Aquí, `innerGreet` es una función regular, pero estamos usando `.bind(this)` para asegurar que `this` dentro de `innerGreet` sea el mismo `this` que en `greet`, que es `person`. Esto hace que `this.name` sea "Dave". Sin `.bind(this)`, `this` dentro de `innerGreet` sería `undefined` porque se refiere al objeto global. Este truco es muy útil para mantener el `this` correcto en funciones internas.',
+    code: hljs.highlight(
+            `const person = {
+    name: "Dave",
+    greet: function () {
+        const innerGreet = function () {
+            console.log(this.name);
+        }.bind(this);
+        innerGreet();
+    }
+};
+person.greet();`,
+            { language: 'javascript' }
+    ).value
+  },
+  {
+    title: ' ¿Cuál es la salida del siguiente código? (Nivel Avanzado)',
     answer: 'La salida de este código será: Ivy',
     explanation: 'En este caso, `person.greet` se asigna a `greetFunction2`. La función `greetFunction2` es una función regular que, cuando se llama, `this` se refiere al objeto global, no a `person`. Sin embargo, usamos `bind(person)` para crear una nueva función `boundGreet` que está vinculada al objeto `person`. Esto significa que `this` dentro de `boundGreet` se refiere a `person`, así que `this.name` es "Ivy". Este uso de `bind` es útil para asegurar que el contexto de `this` se mantenga como esperas, independientemente de cómo se llame la función.',
     code: hljs.highlight(
@@ -215,8 +215,8 @@ console.log(multiplier.multiply(5));`,
       return innerMultiply(num);
   }
 };
-console.log(calculator.add(5)); // 15
-console.log(calculator.multiply(5)); // NaN`,
+console.log(calculator.add(5));
+console.log(calculator.multiply(5));`,
         { language: 'javascript' }
     ).value
   },
